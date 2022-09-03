@@ -1,0 +1,42 @@
+.pageStyles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.reasonsList {
+  list-style: circle;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.systemSelector {
+  padding-top: 10px;
+}
+
+.submitButton {
+  margin-top: 30px;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+
+  margin: 20px;
+  border: 1px solid black;
+  min-width: 200px;
+  min-height: 50px;
+}
