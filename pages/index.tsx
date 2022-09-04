@@ -10,12 +10,14 @@ const SystemSelector = ({
   imperialText,
   metricText,
   id,
+  isMetricDefault = true,
 }: {
   metricText: string;
   imperialText: string;
   id: string;
+  isMetricDefault?: boolean;
 }) => {
-  const [isMetric, setIsMetric] = useState(true);
+  const [isMetric, setIsMetric] = useState(isMetricDefault);
   return (
     <ButtonGroup className={styles.systemSelector}>
       <Button
@@ -147,6 +149,7 @@ const Home: NextPage = () => {
               metricText="metric (kg)"
               imperialText="imperial (lb)"
               id="weight"
+              isMetricDefault={false}
             />
           </div>
           <Button
