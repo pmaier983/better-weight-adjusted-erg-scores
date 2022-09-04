@@ -71,33 +71,33 @@ const Home: NextPage = () => {
 
             const formTarget: any = e.target;
 
-            // const isDistanceMetric =
-            //   formTarget?.distanceMetricActive?.id === "distanceMetricActive";
+            const isDistanceMetric =
+              formTarget?.distanceMetricActive?.id === "distanceMetricActive";
             const isWeightMetric =
               formTarget?.weightMetricActive?.id === "weightMetricActive";
 
             const weightRaw = parseInt(formTarget?.weight.value, 10);
-            // const distanceRaw = parseInt(formTarget?.distance.value, 10);
+            const distanceRaw = parseInt(formTarget?.distance.value, 10);
 
-            // const distanceMetric = isDistanceMetric
-            //   ? distanceRaw
-            //   : distanceRaw * 1609.344;
+            const distanceMetric = isDistanceMetric
+              ? distanceRaw
+              : distanceRaw * 1609.344;
             const weightMetric = isWeightMetric
               ? weightRaw
               : weightRaw * 0.453592;
 
             // This will break with any change to form order... don't do this.
-            const hours = parseInt(formTarget[0].value, 10);
-            const minutes = parseInt(formTarget[1].value, 10);
-            const seconds = parseInt(formTarget[2].value, 10);
+            const hours = parseInt(formTarget[5].value, 10);
+            const minutes = parseInt(formTarget[6].value, 10);
+            const seconds = parseInt(formTarget[7].value, 10);
 
             if (0 === hours && 0 === minutes && 0 === seconds) {
               setFinalValue("Input a Time!");
               return;
             }
+
             const [resultMin, resultSec] = WeightAdjustment(
-              // distanceMetric,
-              1000,
+              distanceMetric,
               minutes + hours * 60,
               seconds,
               weightMetric
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
             }
           }}
         >
-          {/* <div className={styles.inputContainer}>
+          <div className={styles.inputContainer}>
             <h4>Distance</h4>
             <NumericInput
               min={1}
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
               imperialText="imperial (miles)"
               id="distance"
             />
-          </div> */}
+          </div>
           <div className={styles.inputContainer}>
             <h4>Time</h4>
             <TimePicker
