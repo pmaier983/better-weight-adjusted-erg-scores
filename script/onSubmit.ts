@@ -81,9 +81,7 @@ export function WeightAdjustment(
   time_adjusted_sec = distance_m / v_adjusted;
   const minutes_adjusted = Math.floor(time_adjusted_sec / 60);
   console.log(distance_m, v_adjusted, minutes_adjusted);
-  const seconds_adjusted = Math.round(
-    time_adjusted_sec - minutes_adjusted * 60
-  );
+  const seconds_adjusted = time_adjusted_sec - minutes_adjusted * 60;
   return [minutes_adjusted, seconds_adjusted];
 }
 
@@ -97,8 +95,7 @@ export function C2WeightAdjustment(
   Wf = Math.pow(weight_lbs / 270, 0.222);
   time_adjusted_sec = (minutes * 60 + seconds) * Wf;
   const minutes_adjusted = Math.floor(time_adjusted_sec / 60);
-  const seconds_adjusted = Math.round(
-    time_adjusted_sec - minutes_adjusted * 60
-  );
+  const seconds_adjusted = time_adjusted_sec - minutes_adjusted * 60;
+
   return [minutes_adjusted, seconds_adjusted];
 }

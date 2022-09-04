@@ -106,7 +106,9 @@ const Home: NextPage = () => {
             );
 
             const formattedSec =
-              resultSec.toString().length === 1 ? `0${resultSec}` : resultSec;
+              Math.round(resultSec).toString().length === 1
+                ? `0${Math.round(resultSec * 10) / 10}`
+                : Math.round(resultSec * 10) / 10;
 
             if (resultMin > 60) {
               setFinalValue(
@@ -125,6 +127,7 @@ const Home: NextPage = () => {
               min={1}
               required
               id="distance"
+              large
               stepSize={1000}
               majorStepSize={5000}
             />
@@ -144,7 +147,13 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.inputContainer}>
             <h4>Weight</h4>
-            <NumericInput min={1} required id="weight" majorStepSize={10} />
+            <NumericInput
+              min={1}
+              required
+              id="weight"
+              majorStepSize={10}
+              large
+            />
             <SystemSelector
               metricText="metric (kg)"
               imperialText="imperial (lb)"
