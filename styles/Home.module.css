@@ -1,14 +1,29 @@
 .pageStyles {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.reasonsList {
-  list-style: circle;
+.title {
+  text-align: center;
+}
+
+.link {
+  color: revert;
+}
+
+.pageContainer {
+  padding: 10px;
+}
+
+.tinyDetails {
+  margin: 0;
+}
+
+.description {
+  max-width: 600px;
 }
 
 .inputsContainer {

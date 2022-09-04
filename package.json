@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
+    "build": "next build && next export -o build",
+    "start": "next dev",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -19,7 +19,6 @@
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
-    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
